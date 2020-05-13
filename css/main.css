@@ -1,0 +1,12 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+	font-family: Monospace;
+}
+.tip {
+	position: fixed;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
