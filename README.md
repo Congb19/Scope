@@ -14,6 +14,37 @@ Name: Scope；Scope 意为…镜(观察仪器)；我们希望我们的项目能�
 
 ### 技术栈
 
-前端 AR：html5 + AR.js
+前端 AR：vue.js + AR.js
 
 识别：tensorflow.js
+
+# scope
+
+## Project setup
+
+```
+cd scope
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+### Lints and fixes files
+
+```
+npm run lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
