@@ -14,9 +14,9 @@ Name: Scope；Scope 意为…镜(观察仪器)；我们希望我们的项目能�
 
 ### 技术栈
 
-前端 AR：vue.js + AR.js
+前端 AR：vue.js + AR.js(Aframe)
 
-识别：tensorflow.js
+识别：tensorflow.js + yolov3
 
 # scope
 
