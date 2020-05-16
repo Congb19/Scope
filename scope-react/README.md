@@ -1,35 +1,10 @@
-# Scope
-
-### 简介
-
-Name: Scope；Scope 意为…镜(观察仪器)；我们希望我们的项目能像各种 Scope 一样洞察秋毫。
-
-中文名: 木本水源；木本水源，出自《汉学师承记》卷八：“菜瓜祭饮食之人，芹藻释瞽宗之奠，乃木本水源之意也。”意指树木的根本和流水的源头，引申为寻根溯源的意思。
-
-本项目为 2020 数字媒体技术创新实践项目，基于 AR.js + tensorflow.js 打造跨平台的 AR 识图交互应用 web 站点。
-
-### 成员
-
-汪雨薇（AI） 林英琮（AR）
-
-### 技术栈
-
-前端 AR：react.js(vue 版本废弃) + AR.js(Aframe)
-
-识别：tensorflow.js + yolov3
-
-# scope
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-```
-cd scope-react
-npm start`
-```
+### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -37,16 +12,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-```
-npm test
-```
+### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-npm run build
-```
+### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -56,9 +27,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```
-npm run eject
-```
+### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
