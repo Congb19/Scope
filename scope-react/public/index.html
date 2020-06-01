@@ -25,14 +25,54 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 		<title>Scope</title>
+		<!-- <link rel="stylesheet" type="text/css" href="../src/css/index.css" /> -->
+		<style>
+			.btn {
+				height: 60px;
+				width: 160px;
+				border-radius: 10px;
+				z-index: 999;
+			}
+			.btn-check {
+				position: fixed;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10%;
+				background-color: rgba(122, 122, 122, 0.9);
+			}
+		</style>
 		<script src="./build/aframe-master.min.js"></script>
 		<script src="./build/aframe-ar.js"></script>
 		<!-- <script src="./build/aframe-ar-nft.js"></script> -->
 	</head>
 	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
-		<div id="root">
-			<img id="img" src="./assets/2.jpg" style="display: none;" />
-		</div>
+		<noscript>Please enable JavaScript to run this app.</noscript>
+		<video id="video" width="400" height="300"></video>
+		<canvas id="canvas" width="400" height="300"></canvas>
+		<img id="img" src="./assets/2.jpg" style="display: none;" />
+		<div id="root"></div>
+		<a-scene
+			id="ascene"
+			embedded
+			arjs="sourceType: webcam;"
+			renderer="antialias: true; alpha: true; precision: medium;"
+			style="position: fixed;"
+		>
+			<a-marker id="amarker" preset="hiro">
+				<a-sphere
+					position="0 0.5 0"
+					radius="0.5"
+					color="#EF2D5E"
+				></a-sphere>
+				<a-plane
+					position="0 0 0"
+					rotation="-90 0 0"
+					width="1"
+					height="1"
+					color="#7BC8A4"
+				></a-plane>
+			</a-marker>
+			<a-entity camera></a-entity>
+		</a-scene>
 	</body>
 </html>
