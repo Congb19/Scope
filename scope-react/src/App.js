@@ -3,7 +3,7 @@ import yolo from "tfjs-yolo";
 
 export default class App extends Component {
 	async yolo3() {
-		// 开始
+		// PART 1 开始
 		// todo：1 拍照作为img dom元素  2
 		console.log("begin");
 		const video = document.getElementById("video"),
