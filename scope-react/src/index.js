@@ -1,3 +1,5 @@
+// Powered By lyc, wyw
+// 2020/6
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";

@@ -49,40 +49,52 @@
 		<noscript>Please enable JavaScript to run this app.</noscript>
 		<video
 			id="video"
-			width="400"
-			height="300"
+			width="800"
+			height="600"
 			style="display: none;"
 		></video>
 		<canvas
 			id="canvas"
-			width="400"
-			height="300"
+			width="800"
+			height="600"
 			style="display: none;"
 		></canvas>
 		<img id="img" src="./assets/2.jpg" style="display: none;" />
 		<div id="root"></div>
 		<a-scene
 			id="ascene"
+			vr-mode-ui="enabled: true;"
 			embedded
 			arjs="sourceType: webcam;"
 			renderer="antialias: true; alpha: true; precision: medium;"
 			style="position: fixed;"
 		>
 			<a-marker id="amarker" preset="hiro">
-				<a-sphere
-					position="0 0.5 0"
-					radius="0.5"
-					color="#EF2D5E"
-				></a-sphere>
-				<a-plane
+				<!-- <a-plane
 					position="0 0 0"
 					rotation="-90 0 0"
 					width="1"
 					height="1"
 					color="#7BC8A4"
-				></a-plane>
+				></a-plane> -->
 			</a-marker>
 			<a-entity camera></a-entity>
 		</a-scene>
+		<!-- <a-scene
+			><a-plane
+				position="0 0 0"
+				rotation="-90 0 0"
+				width="1"
+				height="1"
+				color="#7BC8A4"
+			></a-plane>
+			<a-entity
+				gltf-model="trex/scene.gltf"
+				scale="1 1 1"
+				position="0 0 0"
+				rotation="0 0 0"
+			>
+			</a-entity>
+		</a-scene> -->
 	</body>
 </html>
