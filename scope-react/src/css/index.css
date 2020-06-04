@@ -1,8 +1,16 @@
-.btn {
-	height: 40px;
-	width: 100px;
-	border-radius: 10px;
+#btn-check {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 10%;
+	z-index: 998;
 }
-.btn-check {
-	background-color: red;
+#space-loading {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+}
+#loading {
 }

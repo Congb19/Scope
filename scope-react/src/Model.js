@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 export default class App extends Component {
 	constructor(props) {
-		console.log("cons", props.props);
+		console.log("model to display: ", props.props);
 		super(props);
 		this.state = { gltf: "", scale: "" };
 	}
