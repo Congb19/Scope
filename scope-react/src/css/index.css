@@ -12,5 +12,24 @@
 	transform: translateY(-50%);
 	transform: translateX(-50%);
 }
-#loading {
+#btn-showinfo {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20%;
+	z-index: 998;
+}
+#sliderScale {
+	position: fixed;
+	left: 80%;
+	transform: translateX(-50%);
+	z-index: 9981;
+	bottom: 20%;
+}
+#sliderRotate {
+	position: fixed;
+	left: 80%;
+	transform: translateX(-50%);
+	z-index: 9981;
+	bottom: 10%;
 }

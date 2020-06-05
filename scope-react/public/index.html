@@ -9,20 +9,36 @@
 			name="description"
 			content="Web site created using create-react-app"
 		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+		/>
+		<script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+		<script>
+			if ("addEventListener" in document) {
+				document.addEventListener(
+					"DOMContentLoaded",
+					function () {
+						FastClick.attach(document.body);
+					},
+					false
+				);
+			}
+			if (!window.Promise) {
+				document.writeln(
+					'<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
+						">" +
+						"<" +
+						"/" +
+						"script>"
+				);
+			}
+		</script>
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 		<title>Scope</title>
 		<!-- <link rel="stylesheet" type="text/css" href="../src/css/index.css" /> -->
-		<style>
-			/* #loadingpos {
-				position: fixed;
-				left: 50%;
-				transform: translateX(-50%);
-				top: 50%;
-				transform: translateY(-50%);
-				z-index: 998;
-			} */
-		</style>
+		<style></style>
 		<script src="./build/aframe-master.min.js"></script>
 		<script src="./build/aframe-ar.js"></script>
 		<script></script>
@@ -30,7 +46,6 @@
 	</head>
 	<body id="body">
 		<noscript>Please enable JavaScript to run this app.</noscript>
-		<div id="loadingpos"></div>
 		<video
 			id="video"
 			width="800"
@@ -43,6 +58,8 @@
 			height="600"
 			style="display: none;"
 		></canvas>
+		<div id="infopos"></div>
+		<div id="sliderpos"></div>
 		<img id="img" src="./assets/2.jpg" style="display: none;" />
 		<div id="root"></div>
 		<a-scene
@@ -53,15 +70,7 @@
 			renderer="antialias: true; alpha: true; precision: medium;"
 			style="position: fixed;"
 		>
-			<a-marker id="amarker" preset="hiro">
-				<!-- <a-plane
-					position="0 0 0"
-					rotation="-90 0 0"
-					width="1"
-					height="1"
-					color="#7BC8A4"
-				></a-plane> -->
-			</a-marker>
+			<a-marker id="amarker" preset="hiro"> </a-marker>
 			<a-entity camera></a-entity>
 		</a-scene>
 	</body>
