@@ -131,6 +131,7 @@ export default class App extends Component {
 			//有的模型列表，如果没有模型就用scene
 			let map = new Map();
 			map.set("bicycle", 1);
+			map.set("orange", 1);
 			if (!map.has(model)) model = "scene";
 			ReactDOM.render(
 				<Model props={model}></Model>,
@@ -160,7 +161,7 @@ export default class App extends Component {
 					icon={<SearchOutlined />}
 					size="large"
 					onClick={this.check}
-					spinning={!this.state.checking}
+					disabled={this.state.checking}
 				>
 					Check!
 				</Button>
