@@ -35,9 +35,6 @@ export default class App extends Component {
 		});
 	};
 	render() {
-		let hasModel = this.props.props !== "scene",
-			result;
-		// hasModel = true;
 		const { scaleValue } = this.state;
 		const { rotateValue } = this.state;
 		let ss =
@@ -47,91 +44,77 @@ export default class App extends Component {
 			" " +
 			this.state.scaleValue;
 		let rr = "0 " + this.state.rotateValue + " 0";
-		if (hasModel)
-			result = (
-				<React.Fragment>
-					<a-plane
+		let result = (
+			<React.Fragment>
+				{/* <a-plane
 						position="0 0 0"
 						rotation="-90 0 0"
 						width="1"
 						height="1"
 						color="#7BC8A4"
-					></a-plane>
-					<a-entity
-						id="aentity"
-						gltf-model={this.state.gltf}
-						scale={ss}
-						position="0 0 0"
-						rotation={rr}
-					>
-						<Row id="sliderScale">
-							<Col span={20}>
-								<Slider
-									// id="sliderScale"
-									min={0}
-									max={0.04}
-									onChange={this.onChangeScale}
-									value={
-										typeof scaleValue === "number"
-											? scaleValue
-											: 0.02
-									}
-									step={0.001}
-								/>
-							</Col>
-							<Col span={4}>
-								<InputNumber
-									min={0}
-									max={0.04}
-									style={{ margin: "0 12px" }}
-									step={0.001}
-									value={scaleValue}
-									onChange={this.onChangeScale}
-								/>
-							</Col>
-						</Row>
-						<Row id="sliderRotate">
-							<Col span={20}>
-								<Slider
-									// id="sliderRotate"
-									min={0}
-									max={360}
-									onChange={this.onChangeRotate}
-									value={
-										typeof rotateValue === "number"
-											? rotateValue
-											: 30
-									}
-									step={0.01}
-								/>
-							</Col>
-							<Col span={4}>
-								<InputNumber
-									min={0}
-									max={360}
-									style={{ margin: "0 12px" }}
-									step={0.01}
-									value={rotateValue}
-									onChange={this.onChangeRotate}
-								/>
-							</Col>
-						</Row>
-					</a-entity>
-				</React.Fragment>
-			);
-		else
-			result = (
-				<React.Fragment>
-					<a-plane
-						position="0 0 0"
-						rotation="-90 0 0"
-						width="1"
-						height="1"
-						color="#7BC8A4"
-					></a-plane>
-					<a-entity geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.1"></a-entity>
-				</React.Fragment>
-			);
+					></a-plane> */}
+				<a-entity
+					id="aentity"
+					gltf-model={this.state.gltf}
+					scale={ss}
+					position="0 0 0"
+					rotation={rr}
+				>
+					<Row id="sliderScale">
+						<Col span={20}>
+							<Slider
+								// id="sliderScale"
+								min={0}
+								max={0.04}
+								onChange={this.onChangeScale}
+								value={
+									typeof scaleValue === "number"
+										? scaleValue
+										: 0.02
+								}
+								step={0.001}
+							/>
+						</Col>
+						<Col span={4}>
+							<InputNumber
+								min={0}
+								max={0.04}
+								style={{ margin: "0 12px" }}
+								step={0.001}
+								value={scaleValue}
+								onChange={this.onChangeScale}
+							/>
+						</Col>
+					</Row>
+					<Row id="sliderRotate">
+						<Col span={20}>
+							<Slider
+								// id="sliderRotate"
+								min={0}
+								max={360}
+								onChange={this.onChangeRotate}
+								value={
+									typeof rotateValue === "number"
+										? rotateValue
+										: 30
+								}
+								step={0.01}
+							/>
+						</Col>
+						<Col span={4}>
+							<InputNumber
+								min={0}
+								max={360}
+								style={{ margin: "0 12px" }}
+								step={0.01}
+								value={rotateValue}
+								onChange={this.onChangeRotate}
+							/>
+						</Col>
+					</Row>
+				</a-entity>
+			</React.Fragment>
+		);
 		return result;
 	}
 }

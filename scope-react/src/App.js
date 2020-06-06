@@ -132,7 +132,8 @@ export default class App extends Component {
 			let map = new Map();
 			map.set("bicycle", 1);
 			map.set("orange", 1);
-			if (!map.has(model)) model = "scene";
+			map.set("car", 1);
+			if (!map.has(model)) model = "none";
 			ReactDOM.render(
 				<Model props={model}></Model>,
 				document.getElementById("amarker")
