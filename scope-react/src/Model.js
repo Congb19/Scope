@@ -2,22 +2,51 @@
 // 2020/6
 import React, { Component } from "react";
 import { Slider, InputNumber, Row, Col } from "antd";
+import { Modal, Button } from "antd";
 import "./css/index.css";
 
 export default class App extends Component {
 	constructor(props) {
-		console.log("model to display: ", props.props);
+		console.log(
+			"model to display: ",
+			props.props.model,
+			props.props.yesTimes
+		);
 		super(props);
-		this.state = { gltf: "", scaleValue: "0.02", rotateValue: "30" };
+		this.state = {
+			gltf: "", //模型路径
+			scaleValue: "0.02", //缩放比例
+			rotateValue: "30", //旋转角度
+		};
 	}
 	componentDidMount() {
+		//如果偶数次识别到且拥有2号模型，就显示2号模型
+		let tmp = this.props.props.model;
+		if (
+			this.props.props.yesTimes % 2 === 0 &&
+			(this.props.props.model == "cup" ||
+				this.props.props.model == "bicycle" ||
+				this.props.props.model == "car")
+		) {
+			tmp = this.props.props.model + "-2";
+			console.log("偶数");
+		}
 		this.setState({
-			gltf: "trex/" + this.props.props + ".gltf",
-			scaleValue: "0.02",
-			rotateValue: "30",
+			gltf: "trex/" + tmp + ".gltf",
 		});
 		console.log("模型路径：", this.state.gltf);
 	}
+	showAnother = () => {
+		//点击切换模型（如果有二号模型的话）
+		console.log("model changed");
+		let tmp = this.props.props.model;
+		if (this.state.gltf == "trex/" + this.props.props.model + ".gltf") {
+			tmp = this.props.props.model + "-2";
+		}
+		this.setState({
+			gltf: "trex/" + tmp + ".gltf",
+		});
+	};
 	onChangeScale = (value) => {
 		if (isNaN(value)) {
 			return;
@@ -60,12 +89,22 @@ export default class App extends Component {
 					position="0 0 0"
 					rotation={rr}
 				>
+					<Row>
+						<Button
+							type="primary"
+							onClick={this.showAnother}
+							id="btn-showanother"
+							shape="round"
+							size="large"
+						>
+							切换模型（如果有两个的话）
+						</Button>
+					</Row>
 					<Row id="sliderScale">
 						<Col span={20}>
 							<Slider
-								// id="sliderScale"
 								min={0}
-								max={0.04}
+								max={0.06}
 								onChange={this.onChangeScale}
 								value={
 									typeof scaleValue === "number"
@@ -75,21 +114,10 @@ export default class App extends Component {
 								step={0.001}
 							/>
 						</Col>
-						<Col span={4}>
-							<InputNumber
-								min={0}
-								max={0.04}
-								style={{ margin: "0 12px" }}
-								step={0.001}
-								value={scaleValue}
-								onChange={this.onChangeScale}
-							/>
-						</Col>
 					</Row>
 					<Row id="sliderRotate">
 						<Col span={20}>
 							<Slider
-								// id="sliderRotate"
 								min={0}
 								max={360}
 								onChange={this.onChangeRotate}
@@ -99,16 +127,6 @@ export default class App extends Component {
 										: 30
 								}
 								step={0.01}
-							/>
-						</Col>
-						<Col span={4}>
-							<InputNumber
-								min={0}
-								max={360}
-								style={{ margin: "0 12px" }}
-								step={0.01}
-								value={rotateValue}
-								onChange={this.onChangeRotate}
 							/>
 						</Col>
 					</Row>

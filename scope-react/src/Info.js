@@ -1,6 +1,7 @@
 // Powered By lyc, wyw
 // 2020/6
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Modal, Button } from "antd";
 import "./css/index.css";
 
@@ -43,6 +44,12 @@ export default class App extends Component {
 					"啦啦啦，这是一个 汽车，" +
 					"由动力驱动，具有4个或4个以上车轮的非轨道承载的车辆，主要用于：载运人员和（或）货物；牵引载运人员和（或）货物的车辆；特殊用途。国产汽车品牌有：长安、长城、奇瑞、吉利、荣威等。国外汽车品牌有：丰田、大众、现代、起亚、标致等。";
 				break;
+			case "cup":
+				h = "杯子";
+				t =
+					"啦啦啦，这是一个 杯子，" +
+					"由于没有模型了，就先用了个茶壶~";
+				break;
 		}
 		this.setState({
 			title: h,
@@ -53,6 +60,15 @@ export default class App extends Component {
 		this.setState({
 			visible: true,
 		});
+	};
+	playAudio = () => {
+		let audioPath = "./assets/" + this.props.props + ".mp3";
+		ReactDOM.render(
+			<audio id="audio" src={audioPath}></audio>,
+			document.getElementById("audiopos")
+		);
+		let audio = document.getElementById("audio");
+		audio.play();
 	};
 	handleCancel = (e) => {
 		console.log(e);
@@ -76,7 +92,7 @@ export default class App extends Component {
 					shape="round"
 					size="large"
 				>
-					Show Detail of {this.state.title}
+					{this.state.title} 的详细信息
 				</Button>
 				<Modal
 					title={this.state.title}
@@ -85,6 +101,14 @@ export default class App extends Component {
 				>
 					<p>Powered By lyc, wyw</p>
 					<p>{this.state.context}</p>
+					<Button
+						type="primary"
+						onClick={this.playAudio}
+						shape="round"
+						size="medium"
+					>
+						播放 {this.state.title} 的介绍音频
+					</Button>
 				</Modal>
 			</div>
 		);

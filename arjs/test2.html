@@ -3,8 +3,7 @@
 		<title>Scope</title>
 		<meta charset="UTF-8">
 		<script src="js/build/aframe-master.min.js"></script>
-		<script src="js/build/aframe-ar-nft.js"></script>
-
+		<script src="js/build/animation-mixer.js"></script>
 		<style>
 			.arjs-loader {
 				height: 100%;
@@ -26,11 +25,11 @@
 			}
 		</style>
 	</head>
-	<body style="margin : 0px; overflow: hidden;">
+	<body style="margin : 0px;">
 		<!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-		<div class="arjs-loader">
+		<!-- <div class="arjs-loader">
 			<div>Loading, please wait...</div>
-		</div>
+		</div> -->
 		<!-- 测试1  -->
 		<!-- <a-scene>
 			<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
@@ -38,14 +37,17 @@
 			<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 			<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 			<a-sky color="#ECECEC"></a-sky>
-		</a-scene> -->
-		<!-- 测试2 -->
-		<!-- <a-scene>
-			<a-entity gltf-model="trex/scene.gltf" scale="1 1 1" position="0 -25 -50">
+			<a-entity gltf-model="trex/bicycle.gltf" scale="1 1 1" position="0 0 -4">
 			</a-entity>
 		</a-scene> -->
+		<!-- 测试2 -->
+		<a-scene>
+			<a-entity gltf-model="trex/scene.gltf" scale="1 1 1" position="0 0 0">
+			</a-entity>
+			<!-- <a-entity camera></a-entity> -->
+		</a-scene>
 		<!-- a-frame scene -->
-		<a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+		<!-- <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
 			arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 			<a-nft type="nft" url="trex/trex-image/K" smooth="true" smoothCount="10" smoothTolerance=".01"
 				smoothThreshold="5">
@@ -56,9 +58,9 @@
 				<a-sky color="#ECECEC"></a-sky>
 				<!-- <a-entity gltf-model="trex/scene.gltf" scale="1 1 1" position="0 -25 -50">
 				</a-entity> -->
-			</a-nft>
+			<!-- </a-nft>
 			<a-entity camera></a-entity>
-		</a-scene>
+		</a-scene> -->
 	</body>
 
 </html>
