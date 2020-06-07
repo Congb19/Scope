@@ -2,7 +2,7 @@
 	position: fixed;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 998;
 }
 #space-loading {
@@ -16,44 +16,86 @@
 	position: fixed;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 20%;
+	bottom: 16%;
 	z-index: 998;
 }
 #btn-showanother {
-	opacity: 0.03; /* 透明度，这个按钮藏起来 */
+	opacity: 0.02; /* 透明度，这个按钮藏起来 */
 	position: fixed;
-	left: 80%;
+	left: 70%;
 	transform: translateX(-50%);
-	z-index: 9981;
-	bottom: 30%;
+	z-index: 991;
+	bottom: 24%;
 }
 #sliderScale {
 	width: 300px;
 	position: fixed;
 	left: 80%;
 	transform: translateX(-50%);
-	z-index: 9981;
-	bottom: 20%;
+	z-index: 999;
+	bottom: 16%;
 }
 #sliderRotate {
 	width: 300px;
 	position: fixed;
 	left: 80%;
 	transform: translateX(-50%);
-	z-index: 9981;
-	bottom: 10%;
+	z-index: 991;
+	bottom: 8%;
 }
 #avatar {
 	position: fixed;
 	left: 5%;
 	transform: translateX(-50%);
-	z-index: 9981;
+	z-index: 991;
 	top: 5%;
 }
 #avatar2 {
 	position: fixed;
 	right: 0;
 	transform: translateX(-50%);
-	z-index: 9981;
+	z-index: 991;
 	top: 5%;
+}
+.fakes {
+	opacity: 0.01; /* 透明度，这个区域要藏起来 */
+	position: fixed;
+	z-index: 990;
+	width: 150px;
+	height: 150px;
+}
+#btn-fake1 {
+	right: 150px;
+	top: 150px;
+	background-color: red;
+}
+#btn-fake2 {
+	right: 150px;
+	top: 300px;
+	background-color: blue;
+}
+#btn-fake3 {
+	right: 300px;
+	top: 150px;
+	background-color: green;
+}
+#btn-fake4 {
+	right: 300px;
+	top: 300px;
+	background-color: yellow;
+}
+#btn-swaprotate {
+	position: fixed;
+	left: 83%;
+	transform: translateX(-50%);
+	z-index: 991;
+	bottom: 25%;
+}
+#bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(222, 222, 222);
 }

@@ -2,7 +2,7 @@
 // 2020/6
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Modal, Button } from "antd";
+import { message, Modal, Button } from "antd";
 import "./css/index.css";
 
 export default class App extends Component {
@@ -84,33 +84,35 @@ export default class App extends Component {
 	};
 	render() {
 		return (
-			<div>
-				<Button
-					type="primary"
-					onClick={this.showModal}
-					id="btn-showinfo"
-					shape="round"
-					size="large"
-				>
-					{this.state.title} 的详细信息
-				</Button>
-				<Modal
-					title={this.state.title}
-					visible={this.state.visible}
-					onOk={this.handleOk}
-				>
-					<p>Powered By lyc, wyw</p>
-					<p>{this.state.context}</p>
+			<React.Fragment>
+				<div>
 					<Button
 						type="primary"
-						onClick={this.playAudio}
+						onClick={this.showModal}
+						id="btn-showinfo"
 						shape="round"
-						size="medium"
+						size="large"
 					>
-						播放 {this.state.title} 的介绍音频
+						{this.state.title} 的详细信息
 					</Button>
-				</Modal>
-			</div>
+					<Modal
+						title={this.state.title}
+						visible={this.state.visible}
+						onOk={this.handleOk}
+					>
+						<p>Powered By lyc, wyw</p>
+						<p>{this.state.context}</p>
+						<Button
+							type="primary"
+							onClick={this.playAudio}
+							shape="round"
+							size="medium"
+						>
+							播放 {this.state.title} 的介绍音频
+						</Button>
+					</Modal>
+				</div>
+			</React.Fragment>
 		);
 	}
 }
