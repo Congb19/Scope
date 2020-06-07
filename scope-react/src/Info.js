@@ -48,7 +48,7 @@ export default class App extends Component {
 				h = "杯子";
 				t =
 					"啦啦啦，这是一个 杯子，" +
-					"由于没有模型了，就先用了个茶壶~";
+					"从古至今其主要功能都是用来饮酒或饮茶，一般容积不大。或在古代喝茶的杯子被称为盖碗。基本器型大多是直口或敞口，口沿直径与杯高近乎相等。有平底、圈足或高足。考古资料表明最早的杯始见于新石器时代。";
 				break;
 		}
 		this.setState({
@@ -110,6 +110,11 @@ export default class App extends Component {
 						>
 							播放 {this.state.title} 的介绍音频
 						</Button>
+						<p> </p>
+						<img
+							src={"./assets/" + this.props.props + ".gif"}
+							width="100%"
+						></img>
 					</Modal>
 				</div>
 			</React.Fragment>

@@ -1,6 +1,6 @@
 #btn-check {
 	position: fixed;
-	left: 50%;
+	left: 44%;
 	transform: translateX(-50%);
 	bottom: 8%;
 	z-index: 998;
@@ -47,12 +47,19 @@
 	position: fixed;
 	left: 5%;
 	transform: translateX(-50%);
+	z-index: 992;
+	top: 5%;
+}
+#weather {
+	position: fixed;
+	left: 10%;
+	transform: translateX(-50%);
 	z-index: 991;
 	top: 5%;
 }
 #avatar2 {
 	position: fixed;
-	right: 0;
+	right: 5%;
 	transform: translateX(-50%);
 	z-index: 991;
 	top: 5%;

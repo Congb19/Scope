@@ -41,10 +41,7 @@ export default class App extends Component {
 		//如果偶数次识别到且拥有2号模型，就显示2号模型
 		let tmp = this.props.props.model;
 		let flag = this.props.props.yesTimes % 2 == 0;
-		if (
-			flag &&
-			["cup", "bicycle", "car"].includes(this.props.props.model)
-		) {
+		if (flag && ["bicycle", "car"].includes(this.props.props.model)) {
 			tmp = this.props.props.model + "-2";
 			// this.showAnother();
 			console.log("偶数");

@@ -11,6 +11,8 @@
     "antd": "^4.3.1",
     "antd-mobile": "^2.3.3",
     "http-server": "^0.12.3",
+    "rc-queue-anim": "^1.8.5",
+    "rc-tween-one": "^2.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

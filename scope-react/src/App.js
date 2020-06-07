@@ -6,15 +6,16 @@ import yolo from "tfjs-yolo";
 import Model from "./Model";
 import Info from "./Info";
 import { Spin, Space } from "antd";
-import { Button } from "antd";
+import { Modal, Button } from "antd";
 import { Avatar } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import { SmileTwoTone } from "@ant-design/icons";
+import { QuestionCircleTwoTone, SmileTwoTone } from "@ant-design/icons";
 import { CloudTwoTone } from "@ant-design/icons";
 import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import { notification } from "antd";
+import QueueAnim from "rc-queue-anim";
 import "./css/index.css";
 //弹提示框
 const openNotification = (type, message, description, placement) => {
@@ -33,6 +34,7 @@ export default class App extends Component {
 			type: "", //识别结果
 			yesTimes: 0, //识别成功次数
 			noTimes: 0, //识别失败次数
+			showHelp: false,
 			history: (
 				<Menu>
 					<Menu.Item>暂无</Menu.Item>
@@ -49,6 +51,11 @@ export default class App extends Component {
 			"杭州：多云，21℃~28℃",
 			"bottomLeft"
 		);
+	};
+	showHelp = () => {
+		this.setState({
+			showHelp: true,
+		});
 	};
 	check = async () => {
 		// PART0 清除之前的模型和info
@@ -184,18 +191,44 @@ export default class App extends Component {
 			);
 		}
 	};
+	handleOk = (e) => {
+		console.log(e);
+		this.setState({
+			showHelp: false,
+		});
+	};
 	render() {
 		return (
-			<div>
+			<QueueAnim delay={2000} className="queue-simple">
+				<Modal
+					title="使用帮助"
+					visible={this.state.showHelp}
+					onOk={this.handleOk}
+				>
+					<p>Powered By lyc, wyw</p>
+					<p>
+						Step 1. 请将相机对准识别平台~
+						务必让视野内包括识别区和展示区。
+					</p>
+					<p>Step 2. 在识别区内放置要识别的物体/图片，点击识别！</p>
+					<p>Step 3. 识别成功后，就可以快乐地学习、交互啦</p>
+					<img src={"./assets/guide.png"} width="100%"></img>
+				</Modal>
 				<Avatar
+					key="b"
 					size="large"
 					id="avatar"
+					icon={<QuestionCircleTwoTone />}
+					onClick={this.showHelp}
+				/>
+				<Avatar
+					key="c"
+					size="large"
+					id="weather"
 					icon={<CloudTwoTone />}
 					onClick={this.showWeather}
-				>
-					天气~
-				</Avatar>
-				<Dropdown overlay={this.state.history}>
+				></Avatar>
+				<Dropdown overlay={this.state.history} key="d">
 					<Button
 						id="avatar2"
 						type="primary"
@@ -215,6 +248,7 @@ export default class App extends Component {
 					/>
 				</Space>
 				<Button
+					key="f"
 					id="btn-check"
 					type="primary"
 					shape="round"
@@ -225,7 +259,7 @@ export default class App extends Component {
 				>
 					开始识别!
 				</Button>
-			</div>
+			</QueueAnim>
 		);
 	}
 }
